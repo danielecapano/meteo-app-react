@@ -1,0 +1,29 @@
+.search-bar {
+    position: relative;
+    width: min(100%, 400px);
+    margin-bottom: 2rem;
+
+    #search-input {
+        width: 100%;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        padding: 0.75rem 1rem;
+        border-radius: 10rem;
+
+        &::placeholder {
+            color: var(--gray);
+        }
+    }
+
+    .search-icon {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        width: 30px;
+        aspect-ratio: 1;
+        transform: translateY(-50%);
+        background-color: transparent;
+
+    }
+}

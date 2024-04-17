@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root {
+  --light-orange: hsl(35, 97%, 87%);
+  --orange: hsl(27, 82%, 58%);
+  --gray: hsl(0, 0%, 67%);
+}
+
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+}
+
+ul,
+ol,
+menu {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+body {
+  background: linear-gradient(to bottom right, var(--light-orange), var(--orange));
+  height: 100vh;
+
+
+}

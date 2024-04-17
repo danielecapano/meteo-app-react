@@ -1,0 +1,10 @@
+.main {
+    height: 100vh;
+    width: 100%;
+    padding-top: 1rem;
+}
+
+.container {
+    width: min(400px, calc(100% - 2rem));
+    margin-inline: auto;
+}
