@@ -4,10 +4,10 @@ import axios from "axios"
 import './App.css';
 import SearchBar from './components/SearchBar';
 import MeteoInfo from './components/MeteoInfo';
+import API_KEY from './API_KEY';
 
 function App() {
   const [search, setSearch] = useState('');
-  const API_KEY = '365c1587106409c42aad93429d0b372f';
   const BASE_URL = 'https://api.openweathermap.org/data/3.0/onecall?';
   const [city, setCity] = useState('');
   const [meteoData, setMeteoData] = useState({});
