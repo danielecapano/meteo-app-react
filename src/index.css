@@ -1,18 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Google+Sans:400,500,700,400i,500i,700i");
 
 :root {
   --light-orange: hsl(35, 97%, 87%);
   --orange: hsl(27, 82%, 58%);
   --gray: hsl(0, 0%, 67%);
+  --white: hsl(0, 0%, 100%);
+
+  --blue-50: hsl(214, 100%, 97%);
+  --blue-100: hsl(214, 95%, 93%);
+  --blue-200: hsl(213, 97%, 87%);
+  --blue-300: hsl(212, 96%, 78%);
+  --blue-400: hsl(213, 94%, 68%);
+  --blue-500: hsl(217, 91%, 60%);
+  --blue-600: hsl(221, 83%, 53%);
+  --blue-700: hsl(224, 76%, 48%);
+  --blue-800: hsl(226, 71%, 40%);
+  --blue-900: hsl(224, 64%, 33%);
+  --blue-950: hsl(226, 57%, 21%);
+
+  --text-gradient-top: hsla(0, 0%, 100%, 1);
+  --text-gradient-bottom: hsla(0, 0%, 100%, 0.05);
+  --text-gradient-gray: linear-gradient(
+    to bottom,
+    var(--text-gradient-top) 30%,
+    var(--text-gradient-bottom) 100%
+  );
 }
-
-
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Outfit", sans-serif;
+  font-family: "Google Sans", sans-serif;
 }
 
 ul,
@@ -36,8 +55,40 @@ button {
 }
 
 body {
-  background: linear-gradient(to bottom right, var(--light-orange), var(--orange));
+  background: linear-gradient(
+    to bottom right,
+    var(--blue-800),
+    var(--blue-500)
+  );
+  background-image: url("/background/01d.jpeg");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
   height: 100vh;
+  &:before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+.wrapper {
+  height: 100%;
+  display: grid;
+}
 
+.loading {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 5px solid var(--gray);
+  border-bottom-color: transparent;
+  transform: rotate(0);
+  animation: spin 1s linear infinite;
+}
 
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

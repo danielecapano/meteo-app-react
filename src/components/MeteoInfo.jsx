@@ -1,70 +1,65 @@
-import './MeteoInfo.css';
+import { getDate, getTime } from "../utils/utilsFunction";
+// import { bg01d, bg01n, bg02d } from "./assets/background";
 
-function MeteoInfo({city, meteoData, noResults}) {
-  const isEmptyObject = (obj) => Object.keys(obj).length === 0;
-  
-  if(!isEmptyObject(meteoData)) {
-    const {temp, humidity, wind_speed, sunrise, sunset, dt: today} = meteoData.current;
-    const {description, icon} = meteoData.current.weather[0];
-    const {dt} = meteoData.daily[0];
-    
-    const convertTime = (unixTimeStamp) => {
-      const date = new Date(unixTimeStamp * 1000);
-      const hours = (date.getHours() < 10) ? `0${date.getHours()}` : date.getHours();
-      const minutes = (date.getMinutes() < 10) ? `0${date.getMinutes()}` : date.getMinutes();
-      const timeFormatted = `${hours}:${minutes}`;
-      return timeFormatted;
-    };
-    
-    const convertDate = (unixTimeStamp) => {
-      const date = new Date(unixTimeStamp * 1000);
-      const month = (date.getMonth() < 10) ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
-      const day = (date.getDate() < 10) ? `0${date.getDate()}` : date.getDate();
-      const dateFormatted = `${day}/${month}`;
-      return dateFormatted;
-    };
-    
-    return (
-      <>
-        <h1 className="city">{city}</h1>
-        <div className="meteo">
-          <img className='icon' src={`src/assets/icons/${icon}.svg`} alt="icon" />
-          <div className='forecast'>
-            <span className='temp'>{Math.round(temp)}&deg;</span>
-            <span className='clouds'>{description}</span>
+import "./MeteoInfo.css";
+
+function MeteoInfo({ city, meteoData, onBg }) {
+  const { temp, humidity } = meteoData.main;
+  const { description, icon } = meteoData.weather[0];
+  const { dt: today, timezone } = meteoData;
+  const { sunrise, sunset } = meteoData.sys;
+  const { speed: wind, deg } = meteoData.wind;
+  const windSpeed = (wind * 3.6).toFixed(1);
+  const windDirectionStyle = {
+    transform: `rotate(${deg}deg)`,
+    display: "inline-block",
+  };
+  onBg(icon);
+
+  console.log(today);
+
+  return (
+    <>
+      <h1 className='city'>{city}</h1>
+      <p className='today'>
+        {getDate(today, timezone, true)} {getTime(today, timezone)}
+      </p>
+      <div className='meteo'>
+        <div className='forecast'>
+          <div className='temp'>
+            <span className='value-temp'>{Math.round(temp)}</span>
+            <span className='deg'>&deg;</span>
+            <span className='celsius'>c</span>
           </div>
+          <span className='clouds'>{description}</span>
         </div>
-        <div className="info">
-          <span className="humidity">
-            <img src="src/assets/icons/humidity.svg" alt="humidity" />
-            <p>{humidity}%</p>
-          </span>
-          <span className="wind">
-            <img src="src/assets/icons/wind.svg" alt="wind" />
-            <p>{wind_speed} km/h</p>
-          </span>
-          <span className="sunrise">
-            <img src="src/assets/icons/sunrise.svg" alt="sunrise" />
-            <p>{convertTime(sunrise)}</p>
-          </span>
-          <span className="sunset">
-            <img src="src/assets/icons/sunset.svg" alt="sunset" />
-            <p>{convertTime(sunset)}</p>
-          </span>
-        </div>
-       
-        <p>{convertDate(today)}</p>
-        <p>{convertDate(dt)}</p>
-      </>
-    );
-  } else if(noResults) {
-    return (
-      <>
-        <p>Nessun risultato trovato</p>
-      </>
-    );
-  }
-  return null; // Se meteoData è vuoto, non restituisce nulla
+        <img className='icon' src={`src/assets/icons/${icon}.svg`} alt='icon' />
+      </div>
+      <div className='info glass'>
+        <span className='humidity'>
+          <img src='src/assets/icons/humidity.svg' alt='humidity' />
+          <p>{humidity}%</p>
+        </span>
+        <span className='wind'>
+          <img src='src/assets/icons/wind.svg' alt='wind' />
+          <p className='wind-speed'>
+            <span style={windDirectionStyle}>&uarr; </span>
+            {windSpeed} km/h
+          </p>
+        </span>
+        <span className='sunrise'>
+          <img src='src/assets/icons/sunrise.svg' alt='sunrise' />
+          <p>{getTime(sunrise, timezone)}</p>
+        </span>
+        <span className='sunset'>
+          <img src='src/assets/icons/sunset.svg' alt='sunset' />
+          <p>{getTime(sunset, timezone)}</p>
+        </span>
+      </div>
+      {/* <p>{getTime(today, timezone)}</p>
+      <p>{getDate(today, timezone, true)}</p> */}
+    </>
+  );
 }
 
-export default MeteoInfo
+export default MeteoInfo;
