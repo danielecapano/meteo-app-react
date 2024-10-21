@@ -10,7 +10,7 @@ import NotFound from "./components/NotFound";
 function App() {
   const [search, setSearch] = useState("milano");
   const { city, meteoData, isError, isLoading } = useFetchMeteo(search);
-  const [bg, setBg] = useState("bg01d");
+  const [bg, setBg] = useState("01d");
 
   const inputValue = (input) => setSearch(input);
   const handleBg = (bg) => setBg(bg);
