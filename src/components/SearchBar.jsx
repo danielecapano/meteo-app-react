@@ -42,11 +42,7 @@ function SearchBar({ inputValue }) {
         />
         <div className='suggestions'>{viewSuggestions(city, search)}</div>
         <button>
-          <img
-            className='search-icon'
-            src='src/assets/icons/search.svg'
-            alt='search'
-          />
+          <img className='search-icon' src='/icons/search.svg' alt='search' />
         </button>
       </form>
     </>
