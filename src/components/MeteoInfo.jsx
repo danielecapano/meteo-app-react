@@ -56,8 +56,6 @@ function MeteoInfo({ city, meteoData, onBg }) {
           <p>{getTime(sunset, timezone)}</p>
         </span>
       </div>
-      {/* <p>{getTime(today, timezone)}</p>
-      <p>{getDate(today, timezone, true)}</p> */}
     </>
   );
 }
