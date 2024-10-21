@@ -33,26 +33,26 @@ function MeteoInfo({ city, meteoData, onBg }) {
           </div>
           <span className='clouds'>{description}</span>
         </div>
-        <img className='icon' src={`src/assets/icons/${icon}.svg`} alt='icon' />
+        <img className='icon' src={`/icons/${icon}.svg`} alt='icon' />
       </div>
       <div className='info glass'>
         <span className='humidity'>
-          <img src='src/assets/icons/humidity.svg' alt='humidity' />
+          <img src='/icons/humidity.svg' alt='humidity' />
           <p>{humidity}%</p>
         </span>
         <span className='wind'>
-          <img src='src/assets/icons/wind.svg' alt='wind' />
+          <img src='/icons/wind.svg' alt='wind' />
           <p className='wind-speed'>
             <span style={windDirectionStyle}>&uarr; </span>
             {windSpeed} km/h
           </p>
         </span>
         <span className='sunrise'>
-          <img src='src/assets/icons/sunrise.svg' alt='sunrise' />
+          <img src='/icons/sunrise.svg' alt='sunrise' />
           <p>{getTime(sunrise, timezone)}</p>
         </span>
         <span className='sunset'>
-          <img src='src/assets/icons/sunset.svg' alt='sunset' />
+          <img src='/icons/sunset.svg' alt='sunset' />
           <p>{getTime(sunset, timezone)}</p>
         </span>
       </div>
