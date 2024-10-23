@@ -7,7 +7,7 @@ function SearchBar({ inputValue }) {
   let { city } = useFetchCity(search);
   console.log(city);
 
-  const handleInputChange = (e) => setSearch(e.target.value);
+  const handleInputChange = (e) => setSearch(e.target.value.toLowerCase());
   const handleSubmit = (e) => {
     e.preventDefault();
 
