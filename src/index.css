@@ -92,3 +92,7 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.forecast-info {
+  overflow: scroll;
+}

@@ -6,14 +6,19 @@ import MeteoInfo from "./components/MeteoInfo";
 import useFetchMeteo from "./useFetchMeteo";
 import Loading from "./components/Loading";
 import NotFound from "./components/NotFound";
+import ForecastInfo from "./components/ForecastInfo";
+import Position from "./components/Position";
 
 function App() {
   const [search, setSearch] = useState("milano");
-  const { city, meteoData, isError, isLoading } = useFetchMeteo(search);
+  const { city, meteoData, forecastData, isError, isLoading } =
+    useFetchMeteo(search);
   const [bg, setBg] = useState("01d");
 
   const inputValue = (input) => setSearch(input);
   const handleBg = (bg) => setBg(bg);
+
+  console.log(forecastData);
 
   return (
     <>
@@ -35,6 +40,10 @@ function App() {
             ) : (
               <MeteoInfo city={city} meteoData={meteoData} onBg={handleBg} />
             )}
+            {/* {!isLoading && !isError && (
+              <ForecastInfo forecastData={forecastData} />
+            )} */}
+            <Position />
           </section>
         </div>
       </section>
