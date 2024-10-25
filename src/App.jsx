@@ -10,7 +10,7 @@ import ForecastInfo from "./components/ForecastInfo";
 import Position from "./components/Position";
 
 function App() {
-  const [search, setSearch] = useState("milano");
+  const [search, setSearch] = useState("");
   const { city, meteoData, forecastData, isError, isLoading } =
     useFetchMeteo(search);
   const [bg, setBg] = useState("01d");

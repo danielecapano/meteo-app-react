@@ -6,8 +6,8 @@ function Position() {
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((posizione) => {
-      setLat(posizione.coords.lat);
-      setLon(posizione.coords.lon);
+      setLat(posizione.coords.latitude);
+      setLon(posizione.coords.longitude);
     });
   }, []);
 
