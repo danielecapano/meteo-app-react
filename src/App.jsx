@@ -1,49 +1,36 @@
-import { useState } from "react";
-
 import "./App.css";
 import SearchBar from "./components/SearchBar";
-import MeteoInfo from "./components/MeteoInfo";
-import useFetchMeteo from "./useFetchMeteo";
+import MeteoCurrent from "./components/MeteoCurrent";
+
 import Loading from "./components/Loading";
 import NotFound from "./components/NotFound";
-import ForecastInfo from "./components/ForecastInfo";
-import Position from "./components/Position";
+import { useMeteoContext } from "./context";
+import MeteoHourly from "./components/MeteoHourly";
 
 function App() {
-  const [search, setSearch] = useState("");
-  const { city, meteoData, forecastData, isError, isLoading } =
-    useFetchMeteo(search);
-  const [bg, setBg] = useState("01d");
-
-  const inputValue = (input) => setSearch(input);
-  const handleBg = (bg) => setBg(bg);
-
-  console.log(forecastData);
+  const { bg, isError, isLoading } = useMeteoContext();
 
   return (
     <>
       <section
         className='main'
         style={{
-          backgroundImage: `url("/background/${bg}.webp")`,
+          backgroundImage: `url(${bg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
         <div className='container'>
-          <SearchBar inputValue={inputValue} />
+          <SearchBar />
           <section>
             {isLoading && !isError ? (
               <Loading />
             ) : !isLoading && isError ? (
               <NotFound />
             ) : (
-              <MeteoInfo city={city} meteoData={meteoData} onBg={handleBg} />
+              <MeteoCurrent />
             )}
-            {/* {!isLoading && !isError && (
-              <ForecastInfo forecastData={forecastData} />
-            )} */}
-            <Position />
+            {!isLoading && !isError && <MeteoHourly />}
           </section>
         </div>
       </section>

@@ -1,0 +1,208 @@
+const wmoCodes = {
+  0: {
+    description: "Sereno",
+    bgDay: "/background/01d.webp",
+    bgNight: "/background/01n.webp",
+    iconDay: "/icons/01d.svg",
+    iconNight: "/icons/01n.svg",
+  },
+  1: {
+    description: "Prevalentemente sereno",
+    bgDay: "/background/01d.webp",
+    bgNight: "/background/01n.webp",
+    iconDay: "/icons/01d.svg",
+    iconNight: "/icons/01n.svg",
+  },
+  2: {
+    description: "Parzialmente nuvoloso",
+    bgDay: "/background/02d.webp",
+    bgNight: "/background/02n.webp",
+    iconDay: "/icons/02d.svg",
+    iconNight: "/icons/02n.svg",
+  },
+  3: {
+    description: "Nuvoloso",
+    bgDay: "/background/04d.webp",
+    bgNight: "/background/04n.webp",
+    iconDay: "/icons/04d.svg",
+    iconNight: "/icons/04n.svg",
+  },
+  45: {
+    description: "Nebbia",
+    bgDay: "/background/50d.webp",
+    bgNight: "/background/50n.webp",
+    iconDay: "/icons/50d.svg",
+    iconNight: "/icons/50n.svg",
+  },
+  48: {
+    description: "Nebbia",
+    bgDay: "/background/50d.webp",
+    bgNight: "/background/50n.webp",
+    iconDay: "/icons/50d.svg",
+    iconNight: "/icons/50n.svg",
+  },
+  51: {
+    description: "Pioggia leggera",
+    bgDay: "/background/09d.webp",
+    bgNight: "/background/09n.webp",
+    iconDay: "/icons/09d.svg",
+    iconNight: "/icons/09n.svg",
+  },
+  53: {
+    description: "Pioggia",
+    bgDay: "/background/09d.webp",
+    bgNight: "/background/09n.webp",
+    iconDay: "/icons/09d.svg",
+    iconNight: "/icons/09n.svg",
+  },
+  55: {
+    description: "Pioggia intensa",
+    bgDay: "/background/09d.webp",
+    bgNight: "/background/09n.webp",
+    iconDay: "/icons/09d.svg",
+    iconNight: "/icons/09n.svg",
+  },
+  56: {
+    description: "Pioggia leggera gelida",
+    bgDay: "/background/09d.webp",
+    bgNight: "/background/09n.webp",
+    iconDay: "/icons/09d.svg",
+    iconNight: "/icons/09n.svg",
+  },
+  57: {
+    description: "Pioggia gelida",
+    bgDay: "/background/09d.webp",
+    bgNight: "/background/09n.webp",
+    iconDay: "/icons/09d.svg",
+    iconNight: "/icons/09n.svg",
+  },
+  61: {
+    description: "Pioggia leggera",
+    bgDay: "/background/10d.webp",
+    bgNight: "/background/10n.webp",
+    iconDay: "/icons/10d.svg",
+    iconNight: "/icons/10n.svg",
+  },
+  63: {
+    description: "Pioggia",
+    bgDay: "/background/10d.webp",
+    bgNight: "/background/10n.webp",
+    iconDay: "/icons/10d.svg",
+    iconNight: "/icons/10n.svg",
+  },
+  65: {
+    description: "Pioggia intensa",
+    bgDay: "/background/10d.webp",
+    bgNight: "/background/10n.webp",
+    iconDay: "/icons/10d.svg",
+    iconNight: "/icons/10n.svg",
+  },
+  66: {
+    description: "Pioggia leggera gelata",
+    bgDay: "/background/10d.webp",
+    bgNight: "/background/10n.webp",
+    iconDay: "/icons/10d.svg",
+    iconNight: "/icons/10n.svg",
+  },
+  67: {
+    description: "Pioggia gelata",
+    bgDay: "/background/10d.webp",
+    bgNight: "/background/10n.webp",
+    iconDay: "/icons/10d.svg",
+    iconNight: "/icons/10n.svg",
+  },
+  71: {
+    description: "Neve leggera",
+    bgDay: "/background/13d.webp",
+    bgNight: "/background/13n.webp",
+    iconDay: "/icons/13d.svg",
+    iconNight: "/icons/13n.svg",
+  },
+  73: {
+    description: "Neve",
+    bgDay: "/background/13d.webp",
+    bgNight: "/background/13n.webp",
+    iconDay: "/icons/13d.svg",
+    iconNight: "/icons/13n.svg",
+  },
+  75: {
+    description: "Neve intensa",
+    bgDay: "/background/13d.webp",
+    bgNight: "/background/13n.webp",
+    iconDay: "/icons/13d.svg",
+    iconNight: "/icons/13n.svg",
+  },
+  77: {
+    description: "Neve ghiacciata",
+    bgDay: "/background/13d.webp",
+    bgNight: "/background/13n.webp",
+    iconDay: "/icons/13d.svg",
+    iconNight: "/icons/13n.svg",
+  },
+  80: {
+    description: "Pioggia leggera",
+    bgDay: "/background/09d.webp",
+    bgNight: "/background/09n.webp",
+    iconDay: "/icons/09d.svg",
+    iconNight: "/icons/09n.svg",
+  },
+  81: {
+    description: "Pioggia",
+    bgDay: "/background/09d.webp",
+    bgNight: "/background/09n.webp",
+    iconDay: "/icons/09d.svg",
+    iconNight: "/icons/09n.svg",
+  },
+  82: {
+    description: "Pioggia intensa",
+    bgDay: "/background/09d.webp",
+    bgNight: "/background/09n.webp",
+    iconDay: "/icons/09d.svg",
+    iconNight: "/icons/09n.svg",
+  },
+  85: {
+    description: "Neve leggera",
+    bgDay: "/background/13d.webp",
+    bgNight: "/background/13n.webp",
+    iconDay: "/icons/13d.svg",
+    iconNight: "/icons/13n.svg",
+  },
+  86: {
+    description: "Neve",
+    bgDay: "/background/13d.webp",
+    bgNight: "/background/13n.webp",
+    iconDay: "/icons/13d.svg",
+    iconNight: "/icons/13n.svg",
+  },
+  95: {
+    description: "Temporale",
+    bgDay: "/background/11d.webp",
+    bgNight: "/background/11n.webp",
+    iconDay: "/icons/11d.svg",
+    iconNight: "/icons/11n.svg",
+  },
+  96: {
+    description: "Temporale con grandine",
+    bgDay: "/background/11d.webp",
+    bgNight: "/background/11n.webp",
+    iconDay: "/icons/11d.svg",
+    iconNight: "/icons/11n.svg",
+  },
+  99: {
+    description: "Temporale con grandine",
+    bgDay: "/background/11d.webp",
+    bgNight: "/background/11n.webp",
+    iconDay: "/icons/11d.svg",
+    iconNight: "/icons/11n.svg",
+  },
+};
+
+export const getWmoCodes = (code, isDay) => {
+  const description = wmoCodes[code].description;
+  const bg = isDay ? wmoCodes[code].bgDay : wmoCodes[code].bgNight;
+  const icon = isDay ? wmoCodes[code].iconDay : wmoCodes[code].iconNight;
+
+  return { description, bg, icon };
+};
+
+// console.log(getWmoCodes(0, 1));

@@ -1,9 +1,11 @@
 import { useState } from "react";
 import "./SearchBar.css";
-import useFetchCity from "../useFetchCity";
+import useFetchCity from "../hooks/useFetchCity";
+import { useMeteoContext } from "../context";
 
-function SearchBar({ inputValue }) {
+function SearchBar() {
   const [search, setSearch] = useState("");
+  const { onSearch } = useMeteoContext();
   let { city } = useFetchCity(search);
   console.log(city);
 
@@ -12,12 +14,12 @@ function SearchBar({ inputValue }) {
     e.preventDefault();
 
     if (city) {
-      inputValue(city);
+      onSearch(city);
       setSearch(city);
       city = "";
       setSearch("");
     } else {
-      inputValue(search);
+      onSearch(search);
       setSearch(search);
       city = "";
       setSearch("");

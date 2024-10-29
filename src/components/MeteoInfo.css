@@ -2,6 +2,7 @@
   /* text-align: center; */
   font-weight: 400;
   margin-bottom: 1rem;
+  font-size: 1.25rem;
 }
 .today {
   font-size: 0.75rem;
@@ -32,16 +33,11 @@
       -webkit-text-fill-color: transparent;
       /* text-shadow: 0 0 10px rgba(0, 0, 0, 0.4); */
     }
-
-    .clouds {
-      font-weight: 500;
-
-      text-transform: capitalize;
-    }
   }
 
   img {
     filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.4));
+    margin-block: -1rem;
   }
 }
 
@@ -50,6 +46,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem;
+  margin-bottom: 1rem;
 
   span {
     display: flex;
@@ -73,7 +70,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.25rem;
 }
 
 .temp-value {
@@ -96,11 +93,31 @@
 
 .glass {
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
+  border-radius: 1rem;
 
   backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.35);
 
   color: #fff;
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+
+.min-max {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: fit-content;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  .min-max__temp {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.clouds {
+  font-weight: 500;
+  width: fit-content;
+  justify-self: center;
+  text-transform: capitalize;
 }
