@@ -5,6 +5,7 @@
   /* flex-wrap: wrap; */
   gap: 1rem;
   overflow-x: auto;
+  scrollbar-width: none;
   padding: 0.5rem;
   .forecast-hour {
     min-width: 30px;
